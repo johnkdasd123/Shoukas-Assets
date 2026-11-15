@@ -2,7 +2,7 @@
 
 Os assets do Shoukas que ficam online, fora do repositório do código: os GIFs das reações
 (abraçar, beijar...) e os das falas das cartas nas partidas do Shoukan, que o bot mostra num
-embed, pelo link.
+embed, pelo link, e a arte das cartas que o Shoukas fez depois da v3.
 
 ## Organização
 
@@ -11,6 +11,9 @@ embed, pelo link.
   `laugh`, `nope`, `pat`, `punch`, `run`, `slap` e `stare`.
 - `shoukan/<nome>.gif`: o GIF que uma carta mostra quando fala numa partida, com o nome que o
   efeito dela dá, como `rod_from_god` ou `za_warudo`.
+- `cards/<ID>.png`: a arte de uma carta que a v3 não tinha, com o id da carta no nome. O bot não a
+  linka: o `tools/assets/render-assets.py` do Shoukas a copia para os assets com que ele desenha
+  as cartas.
 
 ## Como o bot os usa
 
@@ -22,12 +25,13 @@ com o commit fixado no código do Shoukas:
 
 O Discord guarda uma cópia de cada imagem que mostra, e o GitHub só é lido na primeira vez.
 
-## As regras de um GIF
+## As regras de um arquivo
 
 - **As reações:** as do `check_sizes.sh` da v3: um GIF de verdade, de pelo menos 400×200 pixels e
   no máximo 8 MB. Um GIF novo entra no fim da pasta da reação, com o próximo número.
 - **As falas das cartas:** um GIF de verdade, com o nome que o efeito da carta dá. O maior tem 9,9
-  MB, e o Discord o mostra.
+  MB, e o Discord o mostra. Um GIF novo do Shoukas segue a regra das reações.
+- **A arte das cartas:** um PNG de 225×350, o tamanho das artes da v3.
 
 ## De onde vieram
 
@@ -44,5 +48,10 @@ O Discord guarda uma cópia de cada imagem que mostra, e o GitHub só é lido na
   que os efeitos das cartas usam; os outros 10 da pasta `gifs`, que nenhum efeito usa, ficaram de
   fora.
 
-Os GIFs são cenas de animes, e os direitos são dos estúdios deles. O ShiroImageAPI e o
-ShoukanAssets não tinham licença.
+- **Os do Shoukas,** publicados pelo `tools/assets/publish-files.sh`: a arte das cartas de Ben 10,
+  escolhida pelo usuário, do [Ben 10 Wiki](https://ben10.fandom.com) e de cenas do desenho, e o GIF
+  `way_big_reveal`, cortado de https://tenor.com/view/waybig-gif-21968351, de 1,85 s a 5,75 s; e a
+  arte da Requiem Arrow, que é a da Arrow da v3.
+
+Os GIFs e as artes são cenas de animes e de desenhos, e os direitos são dos estúdios deles. O
+ShiroImageAPI e o ShoukanAssets não tinham licença.
